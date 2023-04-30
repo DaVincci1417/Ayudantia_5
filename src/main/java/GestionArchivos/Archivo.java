@@ -27,7 +27,7 @@ public class Archivo{
     public LinkedList<String> obtenerTextoDelArchivo(){
         LinkedList<String> texto = null;
         try {
-            File archivo = new File("C:\\Users\\ecani\\Desktop\\DaVincci\\Proyectos\\Ayudantia5\\src\\main\\resources\\archivos\\usuarios.txt");
+            File archivo = obtenerArchivo();
             if(archivo.exists()){
                 texto = new LinkedList<>();
                 BufferedReader br = new BufferedReader(new FileReader(archivo));
@@ -48,7 +48,7 @@ public class Archivo{
     }
     private File obtenerArchivo(){
         try {
-            URL url = getClass().getClassLoader().getResource("usuarios.txt");
+            URL url = getClass().getClassLoader().getResource("C:\\Users\\ecani\\Desktop\\DaVincci\\Proyectos\\Ayudantia5\\src\\main\\resources\\archivos\\usuarios.txt");
             return new File(url.toURI());
         }catch (URISyntaxException e){
             e.printStackTrace();
